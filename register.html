@@ -1,15 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Registro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css" />
-    <script src="JS/signup.js"></script>
+    <script src="JS/register.js"></script>
 </head>
+
 <body>
-    Registro de Empleado
-    
+    <div>
+        <h1>Registro de Empleado</h1>
+        <form name="register" method="POST" onsubmit="return validateForm()">
+            <!--Obligatorio-->
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre">
+            <span class="msg" data-field="nombre" hidden>El nombre solo debe contener letras</span>
+
+            <!--Obligatorio-->
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido">
+            <span class="msg" data-field="apellido" hidden>El apellido solo debe contener letras</span>
+
+            <label for="usuario">Usuario (email)</label>
+            <input type="text" name="usuario" />
+            <span class="msg" data-field="usuario" hidden>El mail debe pertenecer a Pufo S.A.</span>
+
+            <label for="trabajo">Trabajo</label>
+            <select name="trabajo">
+                <option value="1">Contador</option>
+                <option value="2">Informatico</option>
+            </select>
+
+            <label for="jefe">Jefe</label>
+            <select name="jefe">
+                <option value="1">Jefe 1</option>
+                <option value="2">Jefe 2</option>
+            </select>
+
+            <!--Obligatorio-->
+            <label for="fechaContrato">Fecha de contrato</label>
+            <input type="text" name="fechaContrato">
+            <span class="msg" data-field="fechaContrato" hidden>La fecha del contrato no es válida</span>
+
+            <label for="telefono">Teléfono móvil</label>
+            <input type="text" name="telefono">
+            <span class="msg" data-field="telefono" hidden>El numero de teefono no es válido</span>
+
+            <!--Obligatorio-->
+            <label for="salario">Salario</label>
+            <input type="text" name="salario">
+            <span class="msg" data-field="salario" hidden></span>
+
+            <!--Obligatorio-->
+            <label for="password">Contraseña de acceso</label>
+            <input type="password" name="password">
+            <span class="msg" data-field="password" hidden></span>
+
+            <!--Obligatorio-->
+            <label for="passwordReply">Confirmar contraseña</label>
+            <input type="password" name="passwordReply">
+            <span class="msg" data-field="passwordReply" hidden></span>
+
+            <input type="submit" value="Registrar" />
+        </form>
+    </div>
 </body>
+
 </html>

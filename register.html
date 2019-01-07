@@ -17,16 +17,13 @@
             <!--Obligatorio-->
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre">
-            <span class="msg" data-field="nombre" hidden>El nombre solo debe contener letras</span>
 
             <!--Obligatorio-->
             <label for="apellido">Apellido</label>
             <input type="text" name="apellido">
-            <span class="msg" data-field="apellido" hidden>El apellido solo debe contener letras</span>
 
             <label for="usuario">Usuario (email)</label>
-            <input type="text" name="usuario" />
-            <span class="msg" data-field="usuario" hidden>El mail debe pertenecer a Pufo S.A.</span>
+            <input type="email" name="usuario">
 
             <label for="trabajo">Trabajo</label>
             <select name="trabajo">
@@ -42,27 +39,22 @@
 
             <!--Obligatorio-->
             <label for="fechaContrato">Fecha de contrato</label>
-            <input type="text" name="fechaContrato">
-            <span class="msg" data-field="fechaContrato" hidden>La fecha del contrato no es válida</span>
+            <input type="date" name="fechaContrato" title="La fecha del contrato no es válida">
 
             <label for="telefono">Teléfono móvil</label>
-            <input type="text" name="telefono">
-            <span class="msg" data-field="telefono" hidden>El numero de teefono no es válido</span>
+            <input type="number" name="telefono">
 
             <!--Obligatorio-->
             <label for="salario">Salario</label>
-            <input type="text" name="salario">
-            <span class="msg" data-field="salario" hidden></span>
+            <input type="number" name="salario" min="858.55" max="12000" step="0.01">
 
             <!--Obligatorio-->
             <label for="password">Contraseña de acceso</label>
             <input type="password" name="password">
-            <span class="msg" data-field="password" hidden></span>
 
             <!--Obligatorio-->
             <label for="passwordReply">Confirmar contraseña</label>
-            <input type="password" name="passwordReply">
-            <span class="msg" data-field="passwordReply" hidden></span>
+            <input type="password" name="passwordReply" title="La contraseña no es igual">
 
             <input type="submit" value="Registrar" />
         </form>

@@ -8,7 +8,7 @@ input , select {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+button {
   width: 100%;
   background-color: #4CAF50;
   color: white;
@@ -19,7 +19,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+button {
   background-color: #45a049;
 }
 
@@ -68,4 +68,10 @@ body {
 .item h2{
   color: darkslategray;
   display: inline;
+}
+
+ul{
+  list-style-type: square;
+  color: #ccc;
+  font-size: 3em;
 }

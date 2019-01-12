@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css" />
     <script src="JS/register.js"></script>
-    <script src="JS/saveUser.js"></script>
 </head>
 
 <body>
@@ -18,7 +17,7 @@
                 <h2>Registro de Empleado</h2>
             </div>
             <div class="item">
-                <form name="register" method="POST" onsubmit="return validateForm()">
+                <form name="register">
                     <!--Obligatorio-->
                     <label for="nombre">Nombre **</label>
                     <input type="text" name="nombre">
@@ -74,7 +73,7 @@
 
                     <!--Obligatorio-->
                     <label for="salario">Salario **</label>
-                    <input type="number" name="salario" min="858.55" max="12000" step="0.01">
+                    <input type="number" name="salario">
                     <span for="salario"></span>
 
                     <br>
@@ -90,15 +89,16 @@
                     <label for="passwordReply">Confirmar contraseña **</label>
                     <input type="password" name="passwordReply" title="La contraseña no es igual">
                     <span for="passwordReply"></span>
-                    
+
                     <br>
 
-                    <input type="submit" value="Registrar" />
+                    <button id="registrar">Registrar</button>
                 </form>
                 <div class="item">
                     <span>** Campos obligatorios</span>
                 </div>
             </div>
+            <a href="index.html">Iniciar sesión</a>
         </div>
     </div>
 </body>

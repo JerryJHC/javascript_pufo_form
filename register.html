@@ -11,53 +11,59 @@
 </head>
 
 <body>
-    <div>
-        <h1>Registro de Empleado</h1>
-        <form name="register" method="POST" onsubmit="return validateForm()">
-            <!--Obligatorio-->
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre">
+    <div class="container">
+        <div class="row">
+            <div class="item">
+                <h1>Registro de Empleado</h1>
+            </div>
+            <div class="item">
+                <form name="register" method="POST" onsubmit="return validateForm()">
+                    <!--Obligatorio-->
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre">
 
-            <!--Obligatorio-->
-            <label for="apellido">Apellido</label>
-            <input type="text" name="apellido">
+                    <!--Obligatorio-->
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido">
 
-            <label for="usuario">Usuario (email)</label>
-            <input type="email" name="usuario">
+                    <label for="usuario">Usuario (email)</label>
+                    <input type="email" name="usuario">
 
-            <label for="trabajo">Trabajo</label>
-            <select name="trabajo">
-                <option value="1">Contador</option>
-                <option value="2">Informatico</option>
-            </select>
+                    <label for="trabajo">Trabajo</label>
+                    <select name="trabajo">
+                        <option value="1">Contador</option>
+                        <option value="2">Informatico</option>
+                    </select>
 
-            <label for="jefe">Jefe</label>
-            <select name="jefe">
-                <option value="1">Jefe 1</option>
-                <option value="2">Jefe 2</option>
-            </select>
+                    <label for="jefe">Jefe</label>
+                    <select name="jefe">
+                        <option value="1">Jefe 1</option>
+                        <option value="2">Jefe 2</option>
+                    </select>
 
-            <!--Obligatorio-->
-            <label for="fechaContrato">Fecha de contrato</label>
-            <input type="date" name="fechaContrato" title="La fecha del contrato no es válida">
+                    <!--Obligatorio-->
+                    <label for="fechaContrato">Fecha de contrato</label>
+                    <input type="date" name="fechaContrato" title="La fecha del contrato no es válida">
 
-            <label for="telefono">Teléfono móvil</label>
-            <input type="number" name="telefono">
+                    <label for="telefono">Teléfono móvil</label>
+                    <input type="number" name="telefono">
 
-            <!--Obligatorio-->
-            <label for="salario">Salario</label>
-            <input type="number" name="salario" min="858.55" max="12000" step="0.01">
+                    <!--Obligatorio-->
+                    <label for="salario">Salario</label>
+                    <input type="number" name="salario" min="858.55" max="12000" step="0.01">
 
-            <!--Obligatorio-->
-            <label for="password">Contraseña de acceso</label>
-            <input type="password" name="password">
+                    <!--Obligatorio-->
+                    <label for="password">Contraseña de acceso</label>
+                    <input type="password" name="password">
 
-            <!--Obligatorio-->
-            <label for="passwordReply">Confirmar contraseña</label>
-            <input type="password" name="passwordReply" title="La contraseña no es igual">
+                    <!--Obligatorio-->
+                    <label for="passwordReply">Confirmar contraseña</label>
+                    <input type="password" name="passwordReply" title="La contraseña no es igual">
 
-            <input type="submit" value="Registrar" />
-        </form>
+                    <input type="submit" value="Registrar" />
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 

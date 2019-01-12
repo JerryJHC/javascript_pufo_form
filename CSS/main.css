@@ -64,3 +64,8 @@ body {
   font-size: 2em;
   text-align: center;
 }
+
+.item h2{
+  color: darkslategray;
+  display: inline;
+}

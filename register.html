@@ -8,54 +8,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css" />
     <script src="JS/register.js"></script>
+    <script src="JS/saveUser.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="item">
-                <h1>Registro de Empleado</h1>
+                <h2>Registro de Empleado</h2>
             </div>
             <div class="item">
                 <form name="register" method="POST" onsubmit="return validateForm()">
                     <!--Obligatorio-->
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Nombre **</label>
                     <input type="text" name="nombre">
                     <span for="nombre"></span>
 
                     <br>
 
                     <!--Obligatorio-->
-                    <label for="apellido">Apellido</label>
+                    <label for="apellido">Apellido **</label>
                     <input type="text" name="apellido">
                     <span for="apellido"></span>
 
                     <br>
 
-                    <label for="usuario">Usuario (email)</label>
+                    <!--Obligatorio-->
+                    <label for="usuario">Usuario (email) **</label>
                     <input type="email" name="usuario">
                     <span for="usuario"></span>
 
                     <br>
 
-                    <label for="trabajo">Trabajo</label>
+                    <label for="trabajo">Trabajo **</label>
                     <select name="trabajo">
                         <option value="1">Contador</option>
-                        <option value="2">Informatico</option>
+                        <option value="2">Analista</option>
+                        <option value="2">Programador</option>
+                        <option value="2">Comercial</option>
                     </select>
 
                     <br>
 
-                    <label for="jefe">Jefe</label>
+                    <label for="jefe">Jefe **</label>
                     <select name="jefe">
-                        <option value="1">Jefe 1</option>
-                        <option value="2">Jefe 2</option>
+                        <option value="1">Pedro Perez</option>
+                        <option value="2">Juan Jimenez</option>
+                        <option value="2">Abelardo Andino</option>
                     </select>
 
                     <br>
 
                     <!--Obligatorio-->
-                    <label for="fechaContrato">Fecha de contrato</label>
+                    <label for="fechaContrato">Fecha de contrato **</label>
                     <input type="date" name="fechaContrato">
                     <span for="fechaContrato"></span>
 
@@ -68,21 +73,21 @@
                     <br>
 
                     <!--Obligatorio-->
-                    <label for="salario">Salario</label>
+                    <label for="salario">Salario **</label>
                     <input type="number" name="salario" min="858.55" max="12000" step="0.01">
                     <span for="salario"></span>
 
                     <br>
 
                     <!--Obligatorio-->
-                    <label for="password">Contraseña de acceso</label>
+                    <label for="password">Contraseña de acceso **</label>
                     <input type="password" name="password">
                     <span for="password"></span>
 
                     <br>
 
                     <!--Obligatorio-->
-                    <label for="passwordReply">Confirmar contraseña</label>
+                    <label for="passwordReply">Confirmar contraseña **</label>
                     <input type="password" name="passwordReply" title="La contraseña no es igual">
                     <span for="passwordReply"></span>
                     
@@ -90,6 +95,9 @@
 
                     <input type="submit" value="Registrar" />
                 </form>
+                <div class="item">
+                    <span>** Campos obligatorios</span>
+                </div>
             </div>
         </div>
     </div>

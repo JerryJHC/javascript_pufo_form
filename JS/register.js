@@ -9,13 +9,14 @@ var regexList = {
 
 //Valida que todos los campos esten rellenados correctamente
 function validateForm() {
+    let res = true;
     for (let key in regexList) {
         if (!evalRegex(key, document.forms["register"][key].value)) {
             setMsg(key, regexList[key].error);
-            return false;
+            res = false;
         } else setMsg(key, '');
     }
-    return true;
+    return res;
 }
 
 //Evalua una expresion del formulario
@@ -26,7 +27,7 @@ function evalRegex(field, value) {
 
 //Muestra u oculta el mensaje de error
 function setMsg(field, value) {
-    document.querySelector("input[name=" + field + "]").setCustomValidity(value);
+    document.querySelector("span[for=" + field + "]").textContent = value;
 }
 
 window.onload = () => {

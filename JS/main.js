@@ -10,19 +10,8 @@ function validateForm() {
 
 //Valida si el usuario existe y devuelve sus datos
 function validateUser(user) {
-    var name = user + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return JSON.parse(c.substring(name.length, c.length));
-        }
-    }
-    return null;
+    let data = getCookie(user);
+    return data == "" ? null : JSON.parse(data);
 }
 
 //Oculta el formulario y muestra los datos del usuario
@@ -40,6 +29,7 @@ function showUserData(data) {
     let b = document.createElement('button');
     b.textContent = 'Salir';
     b.addEventListener('click', () => {
+        closeSession();
         window.location.reload();
     })
     userData.appendChild(b);
@@ -52,12 +42,19 @@ function logIn(event) {
         let data = validateUser(document.querySelector('input[name=usuario]').value);
         if (data != null && data.password == document.querySelector('input[name=password]').value) {
             showUserData(data);
+            setSession(data.usuario);
         } else
             document.querySelectorAll("span[for=usuario],span[for=password]").forEach((e) => e.textContent = 'El usuario o la contraseña introducidos no son validos');
     }
 }
 
 window.onload = () => {
-    document.querySelector("input[name=usuario]").addEventListener('change', validateForm)
-    document.getElementById("login").addEventListener('click', logIn)
+    //Verifica si hay una sesion abierta
+    let session = getSession();
+    if (session != "") {
+        showUserData(validateUser(session));
+    } else {
+        document.querySelector("input[name=usuario]").addEventListener('change', validateForm);
+        document.getElementById("login").addEventListener('click', logIn);
+    }
 }

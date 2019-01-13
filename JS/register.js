@@ -89,19 +89,7 @@ function setMsg(field, value) {
 
 //Valida si el usuario ya esta registrado
 function validateUser(user) {
-    var name = user + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return true;
-        }
-    }
-    return false;
+    return getCookie(user) != "";
 }
 
 //Guarda el usuario en una cookie con el email como clave
@@ -113,15 +101,14 @@ function saveUser(event) {
             if (key != 'passwordReply')
                 data[key] = (key != 'trabajo' && key != 'jefe') ? document.querySelector("input[name=" + key + "]").value : document.querySelector("select[name=" + key + "]").value;
         }
-        let d = new Date();
-        d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
-        let expires = "expires=" + d.toUTCString();
-        document.cookie = data.usuario + "=" + JSON.stringify(data) + ";" + expires + ";path=/";
+        setCookie(data.usuario, JSON.stringify(data), 3);
         window.location.href = 'index.html';
     }
 }
 
 window.onload = () => {
+    //Verifica si hay una sesion abierta
+    if (getSession() != "") window.location.href = 'index.html';
     for (let key in fieldList) {
         if (key == 'fechaContrato')
             document.querySelector("input[name=" + key + "]").addEventListener('change', validateForm);

@@ -71,7 +71,7 @@ function validateDate() {
 function validateSalary() {
     let sal = document.forms[formName]['salario'].value;
     if (!isNaN(sal)) {
-        return sal >= 858.55 && sal <= 120000;
+        return sal >= 858.55 && sal <= 12000;
     }
     return false;
 }
